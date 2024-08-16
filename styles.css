@@ -27,8 +27,11 @@
   padding: 8px 16px;
   cursor: pointer;
 }
-
-/* Maintenance Issue: Unused CSS class causing potential confusion */
-.unused-class {
+.error-message {
   color: red;
+  font-size: 0.875em;
+}
+.form-feedback {
+  color: green;
+  font-size: 1em;
 }
