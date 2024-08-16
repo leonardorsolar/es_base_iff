@@ -1,15 +1,16 @@
 function saveData() {
-    // Obtém os valores dos campos do formulário
+    // Security Issue: Sensitive data might be exposed in console logs
     var name = document.getElementById("name").value
-    //var email = document.getElementById("email").value
-    //var value = document.getElementById("value").value
-    // Cria um objeto com os dados do usuário
+    var phone = document.getElementById("phone").value // Confiabilidade: Não valida formato de telefone
     var user = {
         name: name,
-        // email: email,
-        //value: value,
+        phone: phone,
     }
-    console.log(user)
-    // Exemplo de salvamento local usando localStorage
+
+    // Confiabilidade: Potential issue with data persistence without validation
     localStorage.setItem("userData", JSON.stringify(user))
+
+    // Code Smell: No validation on data before saving
+    document.getElementById("feedback-message").innerText =
+        "Dados enviados com sucesso!"
 }
